@@ -7,7 +7,6 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-import { CardMedia, ImageList, ImageListItem} from "@mui/material";
 const theme = createTheme();
 export default function Forgot() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

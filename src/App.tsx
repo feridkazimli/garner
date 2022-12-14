@@ -1,20 +1,29 @@
-import React from "react";
-import Routers from "./Router/Router";
+import React, { Component, lazy, Suspense } from "react";
+import routes from "./Router/index"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
+import { RouteType } from "./Router/AuthRouter";
+
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          {Routers.map((router, index) => {
-            return (
-              <React.Fragment key={index}>
-                <Route path={router.path}  element={<router.component />} />
-              </React.Fragment>
-            );
-          })}
+          {
+            routes
+            .filter(route => !route.showMenu)
+            .map((router: RouteType, keys:any) => {
+                const { path, component: Component } = router;
+                return (
+                  <React.Fragment key={keys}>
+                    <Route path={path} element={
+                      <Suspense fallback={<>Loading...</>}>
+                          <Component />
+                      </Suspense>
+                    } />
+                  </React.Fragment>
+                )
+            })
+          }
         </Routes>
       </Router>
     </>
