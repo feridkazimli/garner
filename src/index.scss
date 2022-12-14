@@ -1,5 +1,18 @@
+:root {
+  --link_style: 'font-family: apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Noto, Oxygen-Sans, Ubuntu, Cantrell, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;'
+
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.link-color {
+  color: rgba($color: #000000, $alpha: 0.88);
+}
+
+.link__text {
+  font-family: var(--link_style);
 }

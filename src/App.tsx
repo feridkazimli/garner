@@ -2,7 +2,7 @@ import { Container, Box } from "@mui/material";
 import React from "react";
 import "./App.scss";
 import Navbar from "./components/Navbar";
-import Register from "./components/Register/Register";
+import CustomForms from "./utils/CustomForms";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         disableGutters
       >
         <Navbar />
-        <Register />
+        <CustomForms />
       </Container>
     </Box>
   );

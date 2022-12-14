@@ -132,40 +132,6 @@ const Register = () => {
           </Stack>
         </Stack>
       </Grid>
-
-      {/* Right Grid  */}
-      <Grid item xs={12} md={6} p="2rem">
-        <Grid container alignItems="center" display="flex">
-          <Grid item md={6} pr="13px" pb="13px" textAlign="center">
-            <CardMedia component="img" image="/img/regimg1.png"></CardMedia>
-            <Typography variant="h6" fontWeight="700" mt="2rem">
-              30 million+
-            </Typography>
-            <Typography variant="body2">app dowloads</Typography>
-          </Grid>
-          <Grid item md={6} pr="13px" pb="13px" textAlign="center">
-            <CardMedia component="img" image="/img/regimg2.png"></CardMedia>
-            <Typography variant="h6" fontWeight="700" mt="2rem">
-              15 years+
-            </Typography>
-            <Typography variant="body2">in business</Typography>
-          </Grid>
-          <Grid item md={6} pr="13px" pb="13px" textAlign="center">
-            <CardMedia component="img" image="/img/regimg3.png"></CardMedia>
-            <Typography variant="h6" fontWeight="700" mt="2rem">
-              2 billion+
-            </Typography>
-            <Typography variant="body2">tasks completed</Typography>
-          </Grid>
-          <Grid item md={6} pr="13px" pb="13px" textAlign="center">
-            <CardMedia component="img" image="/img/regimg4.png"></CardMedia>
-            <Typography variant="h6" fontWeight="700" mt="2rem">
-              1 million+
-            </Typography>
-            <Typography variant="body2">pro users</Typography>
-          </Grid>
-        </Grid>
-      </Grid>
     </Grid>
   );
 };
