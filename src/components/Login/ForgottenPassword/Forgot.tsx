@@ -6,20 +6,17 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import passwordforgetfoto from "../../../images/forgetpass.png";
-import "./CustomForget.css";
 import { Link } from "react-router-dom";
+import { CardMedia, ImageList, ImageListItem} from "@mui/material";
 const theme = createTheme();
 export default function Forgot() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+      email: data.get("email")
     });
   };
-
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -27,7 +24,7 @@ export default function Forgot() {
           item
           xs={12}
           sx={{ boxShadow: "none" }}
-          sm={8}
+          sm={12}
           md={6}
           component={Paper}
           square
@@ -94,7 +91,7 @@ export default function Forgot() {
               >
                 Reset my Password
               </Button>
-              <Link to="/login">Go to login</Link>
+              <Link to="/signin">Go to login</Link>
             </Box>
           </Box>
         </Grid>
@@ -106,20 +103,32 @@ export default function Forgot() {
           component={Paper}
           square
           sx={{
+            display: {
+                xs:"none",
+                sm:"none",
+                md:"flex"
+            },
             height: "100vh",
             boxShadow: "none",
           }}
         >
           <Box
             sx={{
+                display: {
+                    xs:"none",
+                    sm:"none",
+                    md:"flex"
+                },
               width: "80%",
               height: "100vh",
-              display: "flex",
               alignItems: "center",
               justifyContent: "flex-start",
             }}
           >
-            <img src={passwordforgetfoto} className="image_custom" />
+      <img
+        src="/assets/images/forgetpass.png"
+        style={{width:"80%"}}
+      />
           </Box>
         </Grid>
       </Grid>
