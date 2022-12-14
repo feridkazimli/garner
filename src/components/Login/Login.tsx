@@ -7,7 +7,8 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { routeArray } from "./linkroute";
+import { CustomLink } from "../../utils/CustomLink";
+import { CustomTextField } from "../../utils/CustomTextField";
 
 const theme = createTheme();
 
@@ -54,47 +55,18 @@ export default function SignIn() {
             >
               Log in
             </Typography>
-
-            {routeArray.map((route) => (
-              <Link
-                href={`${route.name}`}
-                variant="h6"
-                sx={{
-                  fontSize: "1.3rem",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  textDecoration: "none",
-                  marginTop: "1.2rem",
-                  border: "1px solid rgb(238,238,238)",
-                  height: "2.7rem",
-                  borderRadius: "5px",
-                  color: "rgb(0,0,0)",
-                }}
-              >
-                <Box component="span" mr=".5rem">
-                  <img src={`/icons/${route.iconName}`} alt="Google Icon" />
-                </Box>
-                Continue with {`${route.name}`}
-              </Link>
-            ))}
+            <CustomLink />
 
             <Box component="form" sx={{ mt: 1 }}>
-              <TextField
-                margin="normal"
-                required
-                fullWidth
+              <CustomTextField
                 id="email"
+                type="email"
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                autoFocus
                 placeholder="Enter your email..."
               />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
+              <CustomTextField
                 name="password"
                 label="Password"
                 type="password"
@@ -162,7 +134,7 @@ export default function SignIn() {
             component={Grid}
           >
             <img
-              src="/images/signInImage.png"
+              src="assetsimages/signInImage.png"
               alt="Sign in"
               style={{ maxWidth: "100%" }}
             />
