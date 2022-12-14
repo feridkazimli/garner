@@ -2,6 +2,7 @@ import { Container, Box } from "@mui/material";
 import React from "react";
 import "./App.scss";
 import Navbar from "./components/Navbar";
+import { Signup, ImageSide } from "./components/Register/Signup";
 import CustomForms from "./utils/CustomForms";
 
 function App() {
@@ -14,7 +15,18 @@ function App() {
         disableGutters
       >
         <Navbar />
-        <CustomForms />
+
+        {/* CustomForms's Props => 
+           leftSide - The component that the our form placed in left side
+           rightSide - The component that the image placed in right side
+           text - The Header of Page
+        */}
+
+        <CustomForms
+          leftSide={<Signup />}
+          rightSide={<ImageSide />}
+          text="Sign Up"
+        />
       </Container>
     </Box>
   );

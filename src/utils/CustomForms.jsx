@@ -5,7 +5,8 @@ import {
 import Stack from "@mui/material/Stack/Stack";
 import Typography from "@mui/material/Typography";
 
-const CustomForms = () => {
+
+const CustomForms = ({ leftSide, text, rightSide }) => {
 
     return (
         <Grid container pt="2rem" mt="32px" pb="2rem">
@@ -13,7 +14,7 @@ const CustomForms = () => {
             <Grid item xs={12} md={6}
                 sx={{
                     display: {
-                        xs: 'flex',
+                        xs: 'grid',
                         md: 'block'
                     },
                     justifyContent: {
@@ -24,6 +25,7 @@ const CustomForms = () => {
                 <Box py="32px">
                     <Typography variant="h4" fontWeight="bold">
                         {/* Page Text  */}
+                        {text}
                     </Typography>
                 </Box>
 
@@ -33,6 +35,7 @@ const CustomForms = () => {
                     maxWidth="350px"
                     textAlign="center"
                 >
+                    {leftSide}
                 </Stack>
             </Grid>
 
@@ -43,7 +46,7 @@ const CustomForms = () => {
                     md: 'grid'
                 }
             }}>
-                {/* {Right Component } */}
+                {rightSide}
             </Grid>
         </Grid>
     );

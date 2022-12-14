@@ -7,10 +7,9 @@ import Stack from "@mui/material/Stack/Stack";
 import Typography from "@mui/material/Typography";
 import CustomButton from "../../utils/CustomButton";
 
-export const RegisterPage = () => {
+export const Signup = () => {
     return (
         <>
-        
             <Box component="hr" sx={{ my: "10px", color: "#fff" }} />
 
             <Stack spacing={2} direction="column">
@@ -33,11 +32,11 @@ export const RegisterPage = () => {
                     >
                         By continuing with Google, Apple, or Email, you agree to
                         Todoist’s{" "}
-                        <a href="#" className="link-color">
+                        <a href="#terms" className="link-color">
                             Terms of Service
                         </a>{" "}
                         and{" "}
-                        <a href="#" className="link-color">
+                        <a href="#terms" className="link-color">
                             Privacy Policy.
                         </a>
                     </Typography>
@@ -56,7 +55,7 @@ export const RegisterPage = () => {
                         }}
                     >
                         Already signed up?{" "}
-                        <a href="#" className="link-color">
+                        <a href="#login" className="link-color">
                             Go to login
                         </a>
                     </Typography>
