@@ -1,13 +1,12 @@
 import {
     Box,
     TextField,
-    CardMedia,
+    Stack,
+    Typography
 } from "@mui/material";
-import Stack from "@mui/material/Stack/Stack";
-import Typography from "@mui/material/Typography";
-import CustomButton from "../../utils/CustomButton";
+import CustomButton from "../../components/Elements/CustomButton";
 
-export const Signup = () => {
+const FormSide = () => {
     return (
         <>
             <Box component="hr" sx={{ my: "10px", color: "#fff" }} />
@@ -23,7 +22,7 @@ export const Signup = () => {
 
                 <Box mt="10px">
                     <Typography
-                    component="p"
+                        component="p"
                         sx={{
                             color: "rgba(0,0,0,0.88)",
                             fontSize: "14px",
@@ -65,18 +64,4 @@ export const Signup = () => {
     )
 }
 
-export const ImageSide = () => {
-    return (
-        <Box position='relative' width='100%'>
-            <CardMedia component="img" image="/img/regimg.png" ></CardMedia>
-            <Box width='280px' p='24px' position='absolute' top='280px' left='200px' borderRadius='8px' bgcolor='#fff' boxShadow='0 3px 20px rgba(0,0,0,.15);'>
-                <Typography>Before Todoist, my to-do lists were scattered all around! Now, everything is in order and in one place.</Typography>
-                <Typography component='p' sx={{
-                    color: 'gray',
-                    pt: "15px",
-                    fontSize: '15px'
-                }}>– Matt M.</Typography>
-            </Box>
-        </Box>
-    )
-}
+export default FormSide

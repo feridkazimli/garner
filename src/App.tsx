@@ -1,34 +1,33 @@
-import { Container, Box } from "@mui/material";
-import React from "react";
-import "./App.scss";
-import Navbar from "./components/Navbar";
-import { Signup, ImageSide } from "./components/Register/Signup";
-import CustomForms from "./utils/CustomForms";
+import React, { Suspense } from "react";
+import routes from "./Router/index";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { RouteType } from "./Router/AuthRouter";
 
 function App() {
   return (
-    <Box width="100vw" minHeight={"max-content"} p={"32px"}>
-      <Container
-        maxWidth="md"
-        sx={{ height: "100vh" }}
-        className="app"
-        disableGutters
-      >
-        <Navbar />
-
-        {/* CustomForms's Props => 
-           leftSide - The component that the our form placed in left side
-           rightSide - The component that the image placed in right side
-           text - The Header of Page
-        */}
-
-        <CustomForms
-          leftSide={<Signup />}
-          rightSide={<ImageSide />}
-          text="Sign Up"
-        />
-      </Container>
-    </Box>
+    <>
+      <Router>
+        <Routes>
+          {routes
+            .filter((route) => !route.showMenu)
+            .map((router: RouteType, keys: any) => {
+              const { path, component: Component } = router;
+              return (
+                <React.Fragment key={keys}>
+                  <Route
+                    path={path}
+                    element={
+                      <Suspense fallback={<>Loading...</>}>
+                        <Component />
+                      </Suspense>
+                    }
+                  />
+                </React.Fragment>
+              );
+            })}
+        </Routes>
+      </Router>
+    </>
   );
 }
 
