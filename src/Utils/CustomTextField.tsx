@@ -9,18 +9,21 @@ type CustomTextFieldProps = {
   autoComplete: string;
   type: string;
   placeholder: string;
+  error?: boolean;
+  register: any;
 };
 
 export const CustomTextField = ({
   id,
   label,
   name,
+  error,
   type,
   autoComplete,
+  register,
   placeholder,
 }: CustomTextFieldProps) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-
   const handleClickShowPassword = () => setShowPassword((user) => !user);
   return (
     <>
@@ -28,9 +31,11 @@ export const CustomTextField = ({
         margin="normal"
         required
         fullWidth
+        error={error}
         id={`${id}`}
         label={`${label}`}
         name={`${name}`}
+        {...register(name)}
         type={type === "password" ? (showPassword ? "text" : "password") : type}
         autoComplete={`${autoComplete}`}
         autoFocus

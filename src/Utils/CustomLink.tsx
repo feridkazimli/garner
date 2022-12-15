@@ -1,6 +1,6 @@
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
-
+import { GlobalStyles } from "../Modules/Login/Styles";
 type Routes = {
   name: string;
   iconName: string;
@@ -28,18 +28,7 @@ export const CustomLink = () => {
         <Link
           href={`${route.name}`}
           variant="h6"
-          sx={{
-            fontSize: "1.3rem",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textDecoration: "none",
-            marginTop: "1.2rem",
-            border: "1px solid rgb(238,238,238)",
-            height: "2.7rem",
-            borderRadius: "5px",
-            color: "rgb(0,0,0)",
-          }}
+          sx={GlobalStyles.customLinkStyle}
         >
           <Box component="span" mr=".5rem">
             <img src={`assets/icons/${route.iconName}`} alt={route.iconName} />
