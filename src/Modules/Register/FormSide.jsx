@@ -4,7 +4,7 @@ import {
     Stack,
     Typography
 } from "@mui/material";
-import CustomButton from "../../components/Elements/CustomButton";
+import CustomButton from "../../Components/Elements/CustomButton";
 
 const FormSide = () => {
     return (
