@@ -1,10 +1,5 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+import { Button, TextField, Paper, Box, Grid, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 const theme = createTheme();
@@ -13,7 +8,7 @@ export default function Forgot() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get("email")
+      email: data.get("email"),
     });
   };
   return (
@@ -103,9 +98,9 @@ export default function Forgot() {
           square
           sx={{
             display: {
-                xs:"none",
-                sm:"none",
-                md:"flex"
+              xs: "none",
+              sm: "none",
+              md: "flex",
             },
             height: "100vh",
             boxShadow: "none",
@@ -113,21 +108,18 @@ export default function Forgot() {
         >
           <Box
             sx={{
-                display: {
-                    xs:"none",
-                    sm:"none",
-                    md:"flex"
-                },
+              display: {
+                xs: "none",
+                sm: "none",
+                md: "flex",
+              },
               width: "80%",
               height: "100vh",
               alignItems: "center",
               justifyContent: "flex-start",
             }}
           >
-      <img
-        src="/assets/images/forgetpass.png"
-        style={{width:"80%"}}
-      />
+            <img src="/assets/images/forgetpass.png" style={{ width: "80%" }} />
           </Box>
         </Grid>
       </Grid>

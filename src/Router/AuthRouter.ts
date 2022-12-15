@@ -11,7 +11,7 @@ const AuthRouter: RouteType[] = [
         path: '/signin'
     },
     {
-        component: lazy(() => import('../Modules/Register/Register')),
+        component: lazy(() => import('../Modules/Register/Signup')),
         path: '/signup'
     },
     {
