@@ -1,14 +1,22 @@
 import { SxProps, Theme } from '@mui/material'
 
-export const GlobalStyles: Record<string, SxProps<Theme> | undefined> = {
+export const GlobalStyless: Record<string, SxProps<Theme> | undefined> = {
+  
   mainContainer: {
-    display: {
-      sm: "flex",
+      display: "flex",
       justifyContent: "center",
       alignItems: "center",
-    },
-
-
+      height:"calc(100vh - 60px)"
+  },
+  NotfoundStyle:{
+    display: {
+      sm: "flex",
+      xs: "flex",
+      flexDirection:"column",
+      justifyContent: "center",
+      alignItems: "center",
+      height:"calc(100vh - 60px)"
+    } 
   },
   formContainer: {
     maxWidth: {
@@ -43,5 +51,19 @@ export const GlobalStyles: Record<string, SxProps<Theme> | undefined> = {
     height: "2.7rem",
     borderRadius: "5px",
     color: "rgb(0,0,0)",
+  },
+  forlogo: {
+     width:"127px",
+     paddingTop:"20px"
+  },
+  customfotostyle:{
+    width:"80%",
+    marginLeft:"40px"
+  },
+  forErrorimage:{
+    width:"480px",
+    height:"240px",
+    objectFit:"cover",
+    marginBottom:"20px"
   }
 }

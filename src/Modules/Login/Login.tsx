@@ -1,4 +1,3 @@
-import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -8,11 +7,10 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { CustomLink } from "../../Components/Elements/CustomLink";
 import { CustomTextField } from "../../Components/Elements/CustomTextField";
 import { useForm } from "react-hook-form";
-import { GlobalStyles } from "../../Styles/MainStyle";
+import { GlobalStyless } from "../../Styles/MainStyle";
 import CustomButton from "../../Components/Elements/CustomButton";
 import { CardMedia } from "@mui/material";
 const theme = createTheme();
-
 interface IFormInputs {
   email: string;
   password: string;
@@ -51,15 +49,14 @@ export default function SignIn() {
   return (
     <ThemeProvider theme={theme}>
       <Container component="main">
-        <Box component={Grid} sx={GlobalStyles.mainContainer}>
-          <Box component={Grid} sx={GlobalStyles.formContainer}>
+        <Box component={Grid} sx={GlobalStyless.mainContainer}>
+          <Box component={Grid} sx={GlobalStyless.formContainer}>
             <Typography component="h1" variant="h1">
               Log in
             </Typography>
             <CustomLink />
 
             <Box mt={1} onSubmit={handleSubmit(onSubmit)} component="form">
-              <form onSubmit={handleSubmit(onSubmit)}></form>
               <CustomTextField
                 id="email"
                 type="email"
@@ -94,8 +91,8 @@ export default function SignIn() {
               </Grid>
             </Grid>
           </Box>
-          <Box sx={GlobalStyles.imageContainer} component={Grid}>
-            <CardMedia
+          <Box sx={GlobalStyless.imageContainer} component={Grid}>
+            <CardMedia sx={GlobalStyless.customfotostyle}
               component="img"
               image="/assets/images/signInImage.png"
             ></CardMedia>
