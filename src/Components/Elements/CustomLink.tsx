@@ -1,6 +1,6 @@
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
-import { GlobalStyles } from "../../Styles/MainStyle";
+import { GlobalStyless } from "../../Styles/MainStyle";
 import { CardMedia } from "@mui/material";
 type linkTypes = {
   name: string;
@@ -29,7 +29,7 @@ export const CustomLink = () => {
         <Link
           href={`${link.name}`}
           variant="h6"
-          sx={GlobalStyles.customLinkStyle}
+          sx={GlobalStyless.customLinkStyle}
         >
           <Box component="span" mr=".5rem">
             <CardMedia
