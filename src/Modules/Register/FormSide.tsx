@@ -20,12 +20,12 @@ const FormSide = () => {
                 {/* Button Componenet  */}
                 <CustomButton text='Sign Up With Email' />
 
-                <Box mt="10px">
+                <Box mt="10px" textAlign='start'>
                     <Typography
                         component="p"
                         sx={{
                             color: "rgba(0,0,0,0.88)",
-                            fontSize: "14px",
+                            fontSize: "13px",
                             lineHeight: 1.2,
                         }}
                     >
@@ -48,7 +48,7 @@ const FormSide = () => {
                         component="p"
                         sx={{
                             color: "rgba(0,0,0,0.88)",
-                            fontSize: "14px",
+                            fontSize: "13px",
                             lineHeight: 1.2,
                             textAlign: "center",
                         }}
