@@ -2,9 +2,9 @@ import React, { Suspense } from "react";
 import { Box, Container } from "@mui/material";
 import routes from "./Router/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { RouteType } from "./Router/AuthRouter";
 import Navbar from "./Components/Navbar";
 import Loading from "./Components/Loading";
+import * as alltype from "./types/index";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             {routes
               .filter((route) => !route.showMenu)
-              .map((router: RouteType, keys: any) => {
+              .map((router: alltype.RouteType, keys: any) => {
                 const { path, component: Component } = router;
                 return (
                   <React.Fragment key={keys}>

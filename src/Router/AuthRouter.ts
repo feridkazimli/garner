@@ -1,11 +1,6 @@
 import { lazy } from "react";
-export interface RouteType {
-    path: string
-    showMenu?: boolean
-    component: React.LazyExoticComponent<() => JSX.Element>
-}
-
-const AuthRouter: RouteType[] = [
+import * as alltype from "../types/index"
+const AuthRouter: alltype.RouteType[] = [
     {
         component: lazy(() => import('../Modules/Login/Login')),
         path: '/signin'
@@ -20,4 +15,4 @@ const AuthRouter: RouteType[] = [
     }
 ];
 
-export default AuthRouter
+export default AuthRouter;
