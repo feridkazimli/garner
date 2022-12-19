@@ -2,19 +2,9 @@ import { Button, InputAdornment } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
-type CustomTextFieldProps = {
-  id: string;
-  label: string;
-  name: string;
-  autoComplete: string;
-  type: string;
-  placeholder: string;
-  error?: boolean;
-  register?: any;
-};
+import { CustomTextFieldProps } from "../../types";
 
 export const CustomTextField = ({
-  id,
   label,
   name,
   error,
@@ -32,7 +22,6 @@ export const CustomTextField = ({
         required
         fullWidth
         error={error}
-        id={`${id}`}
         label={`${label}`}
         name={`${name}`}
         {...register(name)}

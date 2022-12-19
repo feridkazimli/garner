@@ -2,8 +2,8 @@ import React, { Suspense } from "react";
 import { Box, Container } from "@mui/material";
 import routes from "./Router/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import Loading from "./Components/Loading";
+import Navbar from "./Components/Elements/Navbar";
+import Loading from "./Components/Elements/Loading";
 import * as alltype from "./types/index";
 
 function App() {

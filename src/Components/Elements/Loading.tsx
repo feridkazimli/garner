@@ -8,7 +8,7 @@ const Loading = () => {
       position="fixed"
       top="0"
       left="0"
-      sx={{ display: "flex", backgroundColor: "rgba(0,0,0,0.78)" }}
+      sx={{ display: "flex", backgroundColor: "rgba(0,0,0,0.78)" , zIndex: '999'}}
       alignItems="center"
       justifyContent="center"
     >

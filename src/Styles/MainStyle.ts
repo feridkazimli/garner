@@ -1,22 +1,22 @@
 import { SxProps, Theme } from '@mui/material'
 
 export const GlobalStyless: Record<string, SxProps<Theme> | undefined> = {
-  
+
   mainContainer: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height:"calc(100vh - 60px)"
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "calc(100vh - 60px)"
   },
-  NotfoundStyle:{
+  NotfoundStyle: {
     display: {
       sm: "flex",
       xs: "flex",
-      flexDirection:"column",
+      flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      height:"calc(100vh - 60px)"
-    } 
+      height: "calc(100vh - 60px)"
+    }
   },
   formContainer: {
     maxWidth: {
@@ -41,29 +41,33 @@ export const GlobalStyless: Record<string, SxProps<Theme> | undefined> = {
     },
   },
   customLinkStyle: {
-    fontSize: "1.3rem",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
     textDecoration: "none",
-    marginTop: "1.2rem",
-    border: "1px solid rgb(238,238,238)",
-    height: "2.7rem",
-    borderRadius: "5px",
-    color: "rgb(0,0,0)",
+    transition: 'all .4s',
+    '&:hover': {
+      backgroundColor: 'rgb(0,0,0,0.12)'
+    },
   },
   forlogo: {
-     width:"127px",
-     paddingTop:"20px"
+    width: "127px",
+    paddingTop: "20px"
   },
-  customfotostyle:{
-    width:"80%",
-    marginLeft:"40px"
+  customfotostyle: {
+    width: "80%",
+    marginLeft: "40px"
   },
-  forErrorimage:{
-    width:"480px",
-    height:"240px",
-    objectFit:"cover",
-    marginBottom:"20px"
+  forErrorimage: {
+    width: "480px",
+    height: "240px",
+    objectFit: "cover",
+    marginBottom: "20px"
+  },
+  hrStyle: {
+    my: "10px",
+    color: "#fff"
+  },
+  pLinkStyle: {
+    color: "rgba(0,0,0,0.88)",
+    fontSize: "13px",
+    lineHeight: 1.2,
   }
 }

@@ -2,10 +2,9 @@ import { Box, Grid } from "@mui/material";
 import Stack from "@mui/material/Stack/Stack";
 import Typography from "@mui/material/Typography";
 
-const CustomForms = ({ leftSide, text, rightSide }: any) => {
+const CustomContainer = ({ leftSide, text, rightSide }: any) => {
     return (
         <Grid container pt="2rem" mt="32px" pb="2rem">
-            {/* Left Grid  */}
             <Grid
                 item
                 xs={12}
@@ -21,9 +20,8 @@ const CustomForms = ({ leftSide, text, rightSide }: any) => {
                     },
                 }}
             >
-                <Box py="32px">
-                    <Typography variant="h4" fontWeight="bold">
-                        {/* Page Text  */}
+                <Box pt="32px" pb='20px'>
+                    <Typography variant="h4" fontSize='32px' fontWeight="bold" maxWidth='70%' lineHeight='1.2'>
                         {text}
                     </Typography>
                 </Box>
@@ -32,7 +30,6 @@ const CustomForms = ({ leftSide, text, rightSide }: any) => {
                     {leftSide}
                 </Stack>
             </Grid>
-
             {/* Right Grid  */}
             <Grid
                 item
@@ -51,4 +48,4 @@ const CustomForms = ({ leftSide, text, rightSide }: any) => {
     );
 };
 
-export default CustomForms;
+export default CustomContainer;

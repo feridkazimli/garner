@@ -1,15 +1,30 @@
-import CustomForms from "../../Components/Blocks/CustomForms"
+import CustomContainer from "../../Components/Blocks/CustomContainer"
 import {
   Box,
-  TextField,
   Stack,
   Typography,
   CardMedia
 } from "@mui/material";
-import CustomButton from "../../Components/Elements/CustomButton";
+import { Link } from 'react-router-dom'
+import { CustomButton } from "../../Components/Elements/CustomButton";
 import { CustomLink } from "../../Components/Elements/CustomLink";
+import { CustomTextField } from "../../Components/Elements/CustomTextField";
+import { useForm } from "react-hook-form";
+import { IFormInputs } from "../../types";
 
 export const FormSide = () => {
+  const {
+    register,
+    handleSubmit,
+    reset
+    // formState: {errors}
+  } = useForm<IFormInputs>({
+  })
+
+  const onSubmit = (data: IFormInputs) => {
+    console.log(data);
+    reset()
+  }
   return (
     <>
       <CustomLink />
@@ -20,10 +35,19 @@ export const FormSide = () => {
           md: '100%'
         }
       }}>
-        <TextField label="Email" placeholder="Enter your email..." />
-        <TextField
+        <Box onSubmit={handleSubmit(onSubmit)} component='form'>
+
+        </Box>
+        <CustomTextField label='Email' name='email' type='email' placeholder="Enter your email..." autoComplete=""
+          register={register}
+        />
+        <CustomTextField
           label="Password"
+          name='password'
+          type='password'
           placeholder="Enter your password..."
+          autoComplete="current-password"
+          register={register}
         />
         {/* Button Componenet  */}
         <CustomButton text='Sign Up With Email' />
@@ -38,13 +62,13 @@ export const FormSide = () => {
           >
             By continuing with Google, Apple, or Email, you agree to
             Todoist’s{" "}
-            <a href="#terms" className="link-color">
+            <Link to="#terms" className="link-color">
               Terms of Service
-            </a>{" "}
+            </Link>{" "}
             and{" "}
-            <a href="#terms" className="link-color">
+            <Link to="#terms" className="link-color">
               Privacy Policy.
-            </a>
+            </Link>
           </Typography>
         </Box>
         <Box component="hr" sx={{ my: "10px", color: "#fff" }} />
@@ -59,11 +83,12 @@ export const FormSide = () => {
             }}
           >
             Already signed up?{" "}
-            <a href="#login" className="link-color">
+            <Link to="/signin" className="link-color">
               Go to login
-            </a>
+            </Link>
           </Typography>
         </Box>
+        <Box />
       </Stack>
     </>
   )
@@ -71,7 +96,7 @@ export const FormSide = () => {
 
 export const ImageSide = () => {
   return (
-    <Box position='relative' width='100%' pl='40px'>
+    <Box position='relative' width='100%' ml='20px'>
       <CardMedia component="img" image="/assets/images/regimg.png" ></CardMedia>
       <Box width='280px' p='24px' position='absolute' top='280px' left='200px' borderRadius='8px' bgcolor='#fff' boxShadow='0 3px 20px rgba(0,0,0,.15);'>
         <Typography>Before Todoist, my to-do lists were scattered all around! Now, everything is in order and in one place.</Typography>
@@ -85,8 +110,6 @@ export const ImageSide = () => {
   )
 }
 
-const SignUp = () => {
-  return <CustomForms text='Sign up' leftSide={< FormSide />} rightSide={< ImageSide />} />
+export default function SignUp() {
+  return <CustomContainer text='Sign up' leftSide={< FormSide />} rightSide={< ImageSide />} />
 }
-
-export default SignUp

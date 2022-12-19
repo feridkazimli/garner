@@ -7,7 +7,7 @@ const MainRouter:alltype.RouteType[] = [
         path: '/'
     },
     {
-        component: lazy(() => import('../Modules/notfound/PageNotFound')),
+        component: lazy(() => import('../Modules/NotFound/PageNotFound')),
         path: '*'
     }
 ];
