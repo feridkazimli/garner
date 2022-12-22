@@ -1,20 +1,24 @@
-import { Box, Typography, CardMedia, Stack } from "@mui/material";
-import { Link } from "react-router-dom";
-import { CustomButton } from "../../../Components/Elements/CustomButton";
+import {  Box, Grid, Typography,  CardMedia, Stack } from "@mui/material";
+import {  Link} from "react-router-dom";
+import {CustomButton} from "../../../Components/Elements/CustomButton";
 import { CustomTextField } from "../../../Components/Elements/CustomTextField";
 import { useForm } from "react-hook-form";
-import { GlobalStyless } from "../../../Styles/MainStyle"
-import { IFormInputs } from "../../../types";
-import CustomForms from "../../../Components/Blocks/CustomContainer";
+import {GlobalStyless} from "../../../Styles/MainStyle";
+import CustomContainer from "../../../Components/Blocks/CustomContainer";
+//import {schema} from "../../../schema/";
+interface IFormInputs {
+  email: string;
+  password: string;
+}
 
-export const FormSide = () => {
+export  function FormSide() {
   const {
     register,
     handleSubmit,
     reset,
-    // formState: { errors },
+   //formState: { errors },
   } = useForm<IFormInputs>({
-    // resolver: yupResolver(schema)
+   //  resolver: yupResolver(schema)
   });
   const onSubmit = (data: IFormInputs) => {
     console.log(data);
@@ -50,8 +54,8 @@ export const FormSide = () => {
           <Typography fontSize='15px'>
             <Link to="/signin" className="link-color">Go to login</Link>
           </Typography>
+          </Box>
         </Box>
-      </Box>
     </Stack>
   )
 }
@@ -69,6 +73,8 @@ export const ImageSide = () => {
 
 export default function Forgot() {
   return (
-    <CustomForms text='Forgot your password?' leftSide={<FormSide />} rightSide={<ImageSide />} />
+    <CustomContainer text='Forgot your password?' leftSide={<FormSide />} rightSide={<ImageSide />} />
   );
 }
+
+
