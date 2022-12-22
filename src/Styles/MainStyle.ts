@@ -2,12 +2,6 @@ import { SxProps, Theme } from '@mui/material'
 
 export const GlobalStyless: Record<string, SxProps<Theme> | undefined> = {
 
-  mainContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "calc(100vh - 60px)"
-  },
   NotfoundStyle: {
     display: {
       sm: "flex",
@@ -15,7 +9,7 @@ export const GlobalStyless: Record<string, SxProps<Theme> | undefined> = {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      height: "calc(100vh - 60px)"
+      height:"100%"
     }
   },
   formContainer: {
@@ -46,14 +40,6 @@ export const GlobalStyless: Record<string, SxProps<Theme> | undefined> = {
     '&:hover': {
       backgroundColor: 'rgb(0,0,0,0.12)'
     },
-  },
-  forlogo: {
-    width: "127px",
-    paddingTop: "20px"
-  },
-  customfotostyle: {
-    width: "80%",
-    marginLeft: "40px"
   },
   forErrorimage: {
     width: "480px",

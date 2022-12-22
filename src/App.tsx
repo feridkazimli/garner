@@ -15,8 +15,8 @@ function App() {
         className="app"
         disableGutters
       >
-        <Navbar />
         <Router>
+        <Navbar />
           <Routes>
             {routes
               .filter((route) => !route.showMenu)
