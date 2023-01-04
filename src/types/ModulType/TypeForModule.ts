@@ -16,10 +16,7 @@ export type linkTypes = {
 export type CustomTextFieldProps = {
     label: string;
     name: string;
-    autoComplete: string;
+    control: any;
     type: string;
     placeholder: string;
-    error?: boolean;
-    register?: any;
-};
-
+  };
